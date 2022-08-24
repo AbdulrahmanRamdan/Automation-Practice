@@ -1,3 +1,4 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -11,8 +12,7 @@ public class Base_Test {
     public Pages pages;
     @BeforeSuite
     void setup(){
-        System.setProperty("webdriver.chrome.driver","resources/chromedriver.exe");
-        driver=new ChromeDriver();
+        driver= WebDriverManager.chromedriver().create();
         driver.get("https://codility-frontend-prod.s3.amazonaws.com/media/task_static/qa_search/6f03f4361b080eeb747193aadd94cd2b/static/attachments/reference_page.html");
         Assert.assertEquals(driver.getTitle(),"ARR");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
