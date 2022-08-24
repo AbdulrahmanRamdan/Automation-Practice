@@ -18,4 +18,11 @@ public class Google_Search_Test extends Base_Test{
         google_search.click_Search_Button();
         Assert.assertTrue(google_search.find_Result_Article());
     }
+    @Test(priority = 3)
+    void validate_Enter_Key_Clicked(){
+        google_search.back();
+        google_search.set_Search_Text("Test automation");
+        google_search.click_Enter_Key();
+        Assert.assertTrue(google_search.find_Result_Article());
+    }
 }
