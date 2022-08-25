@@ -14,7 +14,7 @@ public class Google_Search extends Element_Object{
         this.driver=webDriver;
     }
     public void set_Search_Text(String text){
-        search_Input=driver.findElement(By.xpath("//*[contains(@title,\"بحث\")]"));
+        search_Input=driver.findElement(By.xpath("//input[@title=\"بحث\"]"));
         clear(search_Input);
         sendKey(search_Input,text);
     }
@@ -22,10 +22,10 @@ public class Google_Search extends Element_Object{
         driver.navigate().back();
     }
     public void click_Enter_Key(){
-        driver.findElement(By.xpath("//*[contains(@title,\"بحث\")]")).sendKeys(Keys.ENTER);
+        driver.findElement(By.xpath("//input[@title=\"بحث\"]")).sendKeys(Keys.ENTER);
     }
     public void click_Search_Button(){
-        search_Button=driver.findElement(By.xpath("//*[contains(@class,\"gNO89b\")]"));
+        search_Button=driver.findElement(By.xpath("//input[@class=\"gNO89b\"]"));
         click(search_Button);
     }
     public boolean find_Google_Logo(){
