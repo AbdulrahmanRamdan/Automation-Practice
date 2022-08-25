@@ -25,7 +25,7 @@ public class Google_Search extends Element_Object{
         driver.findElement(By.xpath("//*[contains(@title,\"بحث\")]")).sendKeys(Keys.ENTER);
     }
     public void click_Search_Button(){
-        search_Button=driver.findElement(By.cssSelector("input.gNO89b"));
+        search_Button=driver.findElement(By.xpath("//*[contains(@class,\"gNO89b\")]"));
         click(search_Button);
     }
     public boolean find_Google_Logo(){
